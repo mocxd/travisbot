@@ -34,8 +34,5 @@ rtm.on(RTM_EVENTS.REACTION_REMOVED, function handleRtmReactionRemoved(reaction) 
 
 // you need to wait for the client to fully connect before you can send messages
 rtm.on(RTM_CLIENT_EVENTS.RTM_CONNECTION_OPENED, function () {
-  // This will send the message 'this is a test message' to the channel identified by id 'C0CHZA86Q'
-  rtm.sendMessage('sup', 'C0CTZ3VR8', function messageSent() {
-    // optionally, you can supply a callback to execute once the message has been sent
-});
+  console.log('client connected');
 });
