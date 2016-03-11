@@ -13,7 +13,7 @@ rtm.start();
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
   console.log("Message:", message);
   if (/[tT]ravis/g.test(message.text)) {
-    var r = Math.floor(Math.random() * 3);
+    var r = Math.floor(Math.random() * 4);
     if (r === 0) {
       rtm.sendMessage('hi', message.channel, function messageSent() {
         console.log('sent message');
