@@ -35,6 +35,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     rtm.sendMessage('you could be testing right now <@' + message.user + '>', message.channel, function messageSent() {
       console.log('sent message');
     });
+  } else if (/[tT]rollvis/g.test(message.text)) {
+    rtm.sendMessage(':troll:', message.channel, function messageSent() {
+      console.log('sent message');
+    });
   }
 });
 
