@@ -13,9 +13,24 @@ rtm.start();
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
   console.log("Message:", message);
   if (/[tT]ravis/g.test(message.text)) {
-    rtm.sendMessage('hi', message.channel, function messageSent() {
-      console.log('sent message');
-    });
+    var r = Math.floor(Math.random() * 3);
+    if (r === 0) {
+      rtm.sendMessage('hi', message.channel, function messageSent() {
+        console.log('sent message');
+      });
+    } else if (r === 1) {
+      rtm.sendMessage('sup', message.channel, function messageSent() {
+        console.log('sent message');
+      });
+    } else if (r === 2) {
+      rtm.sendMessage('オッス', message.channel, function messageSent() {
+        console.log('sent message');
+      });
+    }  else if (r === 3) {
+      rtm.sendMessage('yo', message.channel, function messageSent() {
+        console.log('sent message');
+      });
+    }
   } else if (message.text.indexOf('<@U0S0MLG4W>') >= 0) {
     rtm.sendMessage('you could be testing right now <@' + message.user + '>', message.channel, function messageSent() {
       console.log('sent message');
@@ -35,7 +50,5 @@ rtm.on(RTM_EVENTS.REACTION_REMOVED, function handleRtmReactionRemoved(reaction) 
 // you need to wait for the client to fully connect before you can send messages
 rtm.on(RTM_CLIENT_EVENTS.RTM_CONNECTION_OPENED, function () {
   console.log('client connected');
-  rtm.sendMessage('sup', 'C0CTZ3VR8', function messageSent() {
-    console.log('sent message');
-  });
+
 });
